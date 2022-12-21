@@ -6,6 +6,8 @@ Implementation of "SpeechLMScore: Evaluating speech generation using speech lang
 ## Usage 
 
 ### Download pretrained models
+Download these pretrained models and update their path in ```run.sh```
+
 * [Pretrained Hubert](https://dl.fbaipublicfiles.com/hubert/hubert_base_ls960.pt)  
 * [Pretrained Hubert-kmeans](https://dl.fbaipublicfiles.com/textless_nlp/gslm/hubert/km50/km.bin)
 * [Speech ulm](https://huggingface.co/soumi-maiti/speech-ulm-lstm)
