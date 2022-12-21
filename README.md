@@ -6,7 +6,7 @@ Implementation of "SpeechLMScore: Evaluating speech generation using speech lang
 ## Usage 
 
 ### Download pretrained models
-Download these pretrained models and update their path in ```run.sh```
+Download these pretrained models and update their path in ```run.sh```. Note: tokens.txt is located with speech ulm model.
 
 * [Pretrained Hubert](https://dl.fbaipublicfiles.com/hubert/hubert_base_ls960.pt)  
 * [Pretrained Hubert-kmeans](https://dl.fbaipublicfiles.com/textless_nlp/gslm/hubert/km50/km.bin)
