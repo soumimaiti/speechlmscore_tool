@@ -1,5 +1,4 @@
 #!/bin/sh
-source venv/bin/activate
 
 
 audio_dir=$1 
@@ -11,15 +10,17 @@ echo "${audio_dir}"
 split=$(basename ${audio_dir})"_"${l}
 echo "${split}"
 
-data_dir=${data_basedir}/${split}
-mkdir -p ${data_dir}
-mkdir -p ${data_dir}/log
-
 data_basedir="data"
 hubert_path="facebook/hubert-base-ls960"
 km_path="models/hubert/km_50.bin"
 ulm_path="models/ulm/"
 token_list="models/ulm/tokens.txt"
+
+data_dir=${data_basedir}/${split}
+mkdir -p ${data_dir}
+mkdir -p ${data_dir}/log
+
+
 
 # Get file list
 python 01a_gen_list.py -a ${audio_dir} -o ${data_dir}/${split}_file_list --ext ${ext} > ./${data_dir}/log/log
