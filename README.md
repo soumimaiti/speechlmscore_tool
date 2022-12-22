@@ -1,4 +1,4 @@
-# speechlmsocre_tool
+# speechlmscore_tool
 
 Implementation of "SpeechLMScore: Evaluating speech generation using speech langauge model" https://arxiv.org/abs/2212.04559
 
