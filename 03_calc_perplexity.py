@@ -47,7 +47,9 @@ def calc_perplexity(
     f_u = open(os.path.join(out_dir, "ppl"), "w", encoding="utf-8")
     ids = []
     lprobs = []
-
+    total_ppl = 0.0
+    total_utt = 0
+    
     for keys, text, text_length in tqdm.tqdm(loader):
         _bs = len((text))
         assert len(keys) == _bs, f"{len(keys)} != {_bs}"
@@ -58,7 +60,6 @@ def calc_perplexity(
             nll, lengths, hypo_lprobs = model.nll(text, text_length)
            
         for i, id in enumerate(keys):
-
             ids.append(id)
             lprobs.append(hypo_lprobs[i, :text_length[i], :].cpu().numpy().tolist())
 
@@ -71,10 +72,14 @@ def calc_perplexity(
             utt_ppl = (_nll / ntoken)
             
             f_u.write("{} {}\n".format(key, utt_ppl))
+
+            total_ppl += utt_ppl 
+            total_utt += 1
     
     f_u.close()
 
-
+    # save total ppl
+    print("Total ppl:", total_ppl/total_utt)
     dictionary = dict(zip(ids, lprobs))
     np.save(os.path.join(out_dir, "lprobs.npy"), dictionary)
 
