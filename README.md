@@ -21,7 +21,7 @@ Download these pretrained models and update their path in ```run.sh```. Note: to
 
 ### Compute SpeechLMScore
 
-Generates speechlmscore for each file in ```audio_dir``` in file ```ppl```
+Generates speechlmscore for each file in ```audio_dir``` in file ```ppl```. Note: for using audio files other than ```.wav``` set ext variable is run.sh. Audio files with sampling rate of 16kHZ are supported.
 
 ```
 audio_dir=<folder containing audio>
