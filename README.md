@@ -3,6 +3,12 @@
 Implementation of "SpeechLMScore: Evaluating speech generation using speech langauge model" https://arxiv.org/abs/2212.04559
 
 
+## Installation
+You should be able to install using
+```
+python setup.py install
+```
+
 ## Usage 
 
 ### Download pretrained models
