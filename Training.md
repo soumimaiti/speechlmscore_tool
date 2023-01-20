@@ -14,7 +14,7 @@ You can train a LSTM speech langauge model using ESPnet toolkit.
 
 ```
   python create_token_list.txt
-'''
+```
 
 3. Prepare data and move them to correct places
 ```
@@ -25,7 +25,7 @@ You can train a LSTM speech langauge model using ESPnet toolkit.
   data_feats=dump/raw
   mkdir -p ${data_feats}
   cat ${lm_train_text} | awk ' { if( NF != 1 ) print $0; } ' > "${data_feats}/lm_train.txt"
-  '''
+```
 
 3. You can use this run_lm.sh for training:
 ```
