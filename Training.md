@@ -13,7 +13,7 @@ You can train a LSTM speech langauge model using ESPnet toolkit.
 1. Create token list in ```data/tokens.txt```.
 
 ```
-  python create_token_list.txt
+  python create_token_list.py
 ```
 
 3. Prepare data and move them to correct places
