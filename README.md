@@ -29,3 +29,7 @@ layer=<Hubert layer to extract features>
 
 ./run.sh ${audio_dir} ${layer}
 ```
+
+
+### Train speech language models
+Additionally speech language model can be trained and used for evaluation as well. [More Details](https://github.com/soumimaiti/speechlmscore_tool/Training.md)
