@@ -10,9 +10,9 @@ This step can be also performed using fairseq [example](https://github.com/faceb
 ### Training speech language model
 You can train a LSTM speech langauge model using ESPnet toolkit.
 
-1. Create token list in ```data/tokens.txt```
+1. Create token list in ```data/tokens.txt'''.
 ```
-  
+  python create_token_list.txt
 '''
 
 3. Prepare data and move them to correct places
