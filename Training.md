@@ -57,4 +57,40 @@ You can train a LSTM speech langauge model using ESPnet toolkit.
       --lm_train_text "${lm_train_text}" \
       --lm_dev_text "${lm_dev_text}" \
       --lm_test_text "${lm_test_text}" "$@"
-'''
+```
+
+Example configuration ```conf/train_lm_rnn_unit1024_nlayers3_dropout0.2_epoch30.yaml```
+
+```
+use_amp: true
+lm: seq_rnn
+lm_conf:
+    unit: 1024
+    nlayers: 3
+    dropout_rate: 0.1
+
+# optimization related
+grad_clip: 5.0
+batch_type: numel
+batch_bins: 10000000
+accum_grad: 1
+max_epoch: 30
+
+optim: adam
+optim_conf:
+   lr: 0.002
+scheduler: reducelronplateau
+scheduler_conf:
+    mode: min
+    factor: 0.5
+    patience: 2
+
+val_scheduler_criterion:
+    - valid
+    - loss
+best_model_criterion:
+-   - valid
+    - loss
+    - min
+keep_nbest_models: 1
+```
