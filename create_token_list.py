@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 N_TOK = 50 # Number of tokens
-with open("tokens.txt", "w") as f:
+with open("data/tokens.txt", "w") as f:
     f.write("<blank>\n")
     f.write("<unk>\n")
     for i in range(N_TOK):
